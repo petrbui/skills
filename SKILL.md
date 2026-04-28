@@ -88,13 +88,44 @@ Runs on first launch. Say "reset profile" to repeat.
 
 ### Step 1 — Self-assessment
 
-Ask:
-> "Quick setup — 4 questions:
-> 1. Role? (Junior Dev / Mid Dev / Senior Dev / Team Lead /
->           Product Manager / QA Engineer / Designer / Complete Beginner)
-> 2. Primary stack or tools? (languages, frameworks, or tools you use at work)
-> 3. Years in your field?
-> 4. Any learning preferences? (ADHD / dyslexia / none)"
+Ask ONE question at a time. Wait for the answer before asking the next.
+
+**Question 1 — Role:**
+> "Welcome to GapHunter. First question:
+>
+> What's your role?
+> 1. Junior Dev
+> 2. Mid-level Dev
+> 3. Senior Dev
+> 4. Team Lead
+> 5. Product Manager
+> 6. QA Engineer
+> 7. Designer
+> 8. Complete Beginner
+> 9. Other — type your own
+>
+> Pick a number or type your answer."
+
+**Question 2 — Stack or tools:**
+> "What's your primary stack or tools?
+> (languages, frameworks, or tools you use at work — e.g. React, Python, Figma, Jira)
+>
+> Just type it — no wrong answer."
+
+**Question 3 — Experience:**
+> "How long have you been in your field?
+> 1. Less than 1 year
+> 2. 1–2 years
+> 3. 3–5 years
+> 4. 5–10 years
+> 5. 10+ years
+> 6. Other — type your own"
+
+**Question 4 — Learning preferences:**
+> "Any learning preferences?
+> 1. ADHD / dyslexia friendly (short chunks, bold terms, no walls of text)
+> 2. None — standard is fine
+> 3. Other — type your own"
 
 ### Step 2 — Format selection
 
