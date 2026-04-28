@@ -149,7 +149,15 @@ curl -o ~/.claude/skills/gaphunter/SKILL.md \
   https://raw.githubusercontent.com/petrbui/GapHunter/main/SKILL.md
 ```
 
-### Cursor / GitHub Copilot / Other agents
+### Gemini CLI
+```bash
+mkdir -p ~/.gemini/skills/gaphunter
+curl -o ~/.gemini/skills/gaphunter/SKILL.md \
+  https://raw.githubusercontent.com/petrbui/GapHunter/main/SKILL.md
+```
+Then: `"Use the gaphunter skill to teach me [concept]"`
+
+### Cursor / GitHub Copilot / JetBrains AI / Other agents
 Copy `SKILL.md` to your agent's skills directory, then invoke with:
 > `"Use the gaphunter skill to teach me [concept]"`
 
