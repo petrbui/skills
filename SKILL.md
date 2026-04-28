@@ -247,7 +247,7 @@ Show dashboard:
 For quick term lookups — no full lesson, just a clear plain-English definition
 tied to their role. Ideal for PMs and designers in meetings.
 
-Trigger: developer says "vocab [term]"
+Trigger: user says "vocab [term]"
 
 Format:
 > "**[Term]** — [one sentence plain-English definition]
@@ -486,6 +486,10 @@ confidently in a meeting without hesitation.
 
 ### 🧭 Breadth achievements
 
+An "area" = a distinct topic domain: e.g. async, databases, CSS, security,
+testing, algorithms, networking, TypeScript, React, state management.
+Each unique domain the user masters at least one concept in counts as one area.
+
 | Milestone | Name | Tier |
 |-----------|------|------|
 | 3 areas | Curious Mind | 🥉 |
@@ -528,7 +532,7 @@ Fire glazing immediately when one unlocks.
 ```
 PROFILE: [Role] | [Stack/Tools] | [Years]yrs | mode=[light/deep] | format=[name]
 STREAK: [N]d | LAST: [YYYY-MM-DD]
-SESSION-START: [HH:MM] | CONCEPTS-THIS-SESSION: [N]
+SESSION-START: [YYYY-MM-DD HH:MM] | CONCEPTS-THIS-SESSION: [N]
 MASTERED: [concept]★★★ | [concept]★★
 GAPS: [concept] | [concept]
 ACHIEVEMENTS: [slug]·[slug]
@@ -537,6 +541,13 @@ AMBUSHES: [concept]([pass/fail]:[date])
 
 Read at session start. Write after every lesson, Ambush, and pause.
 If the file doesn't exist → run First Run.
+
+**No filesystem access (some web agents):**
+If your platform cannot write files, run in memory-only mode:
+- All features work within the session
+- Progress, streak, and achievements are lost when the session ends
+- Tell the user: "I can't save progress on this platform. Copy the
+  session export to a local file to keep a record."
 
 ---
 
@@ -560,7 +571,7 @@ Deep Mode is for developers only. Non-developer roles always use Light Mode.
 | Say | Action |
 |-----|--------|
 | `teach me [concept]` | Start a lesson |
-| `suggest` | Claude picks next gap |
+| `suggest` | GapHunter picks next gap |
 | `skip [concept]` | Verify then mark known |
 | `vocab [term]` | Quick plain-English definition |
 | `ambush me` | Fire The Ambush now |
