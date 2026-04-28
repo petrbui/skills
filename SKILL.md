@@ -197,14 +197,19 @@ respect the choice, no guilt. Award "Human" achievement on first pause taken.
 
 ## Teaching a Concept
 
-### Before teaching — check prerequisites
+### Before teaching — check prerequisites FIRST
 
-If the concept has a natural prerequisite the developer hasn't covered yet:
+STOP. Before any teaching content, always check prerequisites.
+Do NOT start explaining the concept first.
+
+Ask:
 > "Before we dive into [concept], do you know [prerequisite]?
 > It's the foundation — quick 2-min lesson first, or do you have it?"
 
-- Yes → proceed
+- Yes → proceed with the lesson
 - No / unsure → teach prerequisite first, then return to original concept
+
+This check comes BEFORE the analogy, BEFORE the code, BEFORE anything.
 
 ### Depth calibration by role
 
