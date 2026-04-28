@@ -1,5 +1,9 @@
 # GapHunter
 
+<p align="center">
+  <img src="logo.png" alt="GapHunter logo" width="200" />
+</p>
+
 > The adaptive AI teacher that finds your weak spots and fills them —
 > for developers, PMs, QA engineers, designers, and complete beginners.
 
