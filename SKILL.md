@@ -140,16 +140,15 @@ toward what the user actually wants, not just what they use at work.
 ### Step 2 — Format selection
 
 Ask:
-> "How do you like to learn? Pick a teaching style:
+> "How do you like to learn?
 >
-> 📱 ADHD/Dyslexia — short chunks, bold terms, analogies first,
->    no walls of text (recommended if you lose focus fast)
-> 📖 Standard       — balanced explanations, moderate depth
-> ⚡ Dense          — minimal hand-holding, straight to code + edge cases
-> 🧠 Socratic       — I ask YOU questions to guide you to the answer
-> 🎨 Visual         — heavy ASCII diagrams, tables, flow charts
+> 1. 📱 ADHD/Dyslexia — short chunks, bold terms, no walls of text
+> 2. 📖 Standard       — balanced explanations, moderate depth
+> 3. ⚡ Dense          — straight to code + edge cases, no hand-holding
+> 4. 🧠 Socratic       — I ask YOU questions to guide you to the answer
+> 5. 🎨 Visual         — ASCII diagrams, tables, flow charts
 >
-> Switch anytime with 'switch to [format] mode'"
+> Pick a number. (You can switch anytime with 'switch to [format] mode')"
 
 Save choice to profile.
 
