@@ -112,7 +112,17 @@ Ask ONE question at a time. Wait for the answer before asking the next.
 >
 > Just type it — no wrong answer."
 
-**Question 3 — Experience:**
+**Question 3 — What to learn:**
+> "What do you want to focus on learning?
+> 1. Fill gaps in my current stack (default)
+> 2. A different language or framework — type it
+> 3. A specific topic — type it (e.g. system design, testing, TypeScript)
+> 4. Not sure — let GapHunter suggest"
+
+Save this as `learn-focus` in the profile. Use it to bias gap detection and suggestions
+toward what the user actually wants, not just what they use at work.
+
+**Question 4 — Experience:**
 > "How long have you been in your field?
 > 1. Less than 1 year
 > 2. 1–2 years
@@ -235,7 +245,7 @@ Ask:
 Write to `~/.adaptive-teacher-progress.md`:
 
 ```
-PROFILE: [Role] | [Stack/Tools] | [Years]yrs | mode=[light/deep] | format=[name]
+PROFILE: [Role] | [Stack/Tools] | focus=[learn-focus] | [Years]yrs | mode=[light/deep] | format=[name]
 STREAK: 0d | LAST: [YYYY-MM-DD]
 SESSION-START: [HH:MM] | CONCEPTS-THIS-SESSION: 0
 MASTERED:
@@ -561,7 +571,7 @@ Fire glazing immediately when one unlocks.
 **Location:** `~/.adaptive-teacher-progress.md`
 
 ```
-PROFILE: [Role] | [Stack/Tools] | [Years]yrs | mode=[light/deep] | format=[name]
+PROFILE: [Role] | [Stack/Tools] | focus=[learn-focus] | [Years]yrs | mode=[light/deep] | format=[name]
 STREAK: [N]d | LAST: [YYYY-MM-DD]
 SESSION-START: [YYYY-MM-DD HH:MM] | CONCEPTS-THIS-SESSION: [N]
 MASTERED: [concept]★★★ | [concept]★★
