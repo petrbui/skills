@@ -155,14 +155,19 @@ Your progress is saved. Your streak continues.
 
 ## Install
 
-### Claude Code
+### Easiest — any platform
+```bash
+npx skill add gaphunter
+```
+
+### Claude Code (manual)
 ```bash
 mkdir -p ~/.claude/skills/gaphunter
 curl -o ~/.claude/skills/gaphunter/SKILL.md \
   https://raw.githubusercontent.com/petrbui/GapHunter/main/SKILL.md
 ```
 
-### Gemini CLI
+### Gemini CLI (manual)
 ```bash
 mkdir -p ~/.gemini/skills/gaphunter
 curl -o ~/.gemini/skills/gaphunter/SKILL.md \
