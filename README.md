@@ -76,13 +76,67 @@ into deep knowledge over time.
 
 ## 📓 NotebookLM Friendly
 
-After every session, GapHunter generates a clean structured digest
-you can paste directly into NotebookLM as a source document.
+[NotebookLM](https://notebooklm.google.com) is a free Google tool.
+You upload documents, then have a conversation about them — or listen
+to an auto-generated podcast summarizing what you uploaded.
 
-Then ask NotebookLM to quiz you, summarize, or explain further.
-Perfect for ADHD learners who want to revisit concepts in a different format.
+**GapHunter + NotebookLM workflow:**
 
-Type `export session` at any time to generate your digest.
+1. Finish a GapHunter session
+2. Type `export session` → get a clean markdown digest
+3. Paste it into [NotebookLM](https://notebooklm.google.com) as a source
+4. Then:
+   - Ask it to quiz you on what you learned
+   - Ask it to explain something a different way
+   - Generate flashcards
+   - Listen to the auto-podcast about your session
+
+Perfect for ADHD and dyslexia learners — review the same material
+in a completely different format, as many times as you need.
+
+---
+
+## Getting Started (Step by Step)
+
+New here? Follow this. Takes 5 minutes.
+
+**Step 1 — Install GapHunter**
+See the Install section below for your platform.
+
+**Step 2 — Open your AI assistant and type:**
+```
+Use the gaphunter skill
+```
+
+**Step 3 — Answer 4 setup questions**
+GapHunter will ask:
+- What's your role? (dev, PM, designer, etc.)
+- What tools do you use?
+- How long have you been in your field?
+- Do you have ADHD or dyslexia?
+
+Honest answers = better lessons.
+
+**Step 4 — Pick a teaching style**
+GapHunter shows 5 options. Pick the one that sounds like you.
+You can change it later anytime.
+
+**Step 5 — Pick something to learn**
+Either:
+- Type `suggest` → GapHunter picks based on your gaps
+- Type `teach me [anything]` → you pick
+
+**Step 6 — Learn it**
+GapHunter teaches. At the end, explain it back in your own words.
+That's the check. No shortcuts.
+
+**Step 7 — Export to NotebookLM (optional)**
+Type `export session` → paste the result into [NotebookLM](https://notebooklm.google.com).
+Review it later. Listen to the podcast version. Never forget it again.
+
+**Step 8 — Come back tomorrow**
+Your progress is saved. Your streak continues.
+3 days in a row and you're already building a habit most people never manage.
 
 ---
 
