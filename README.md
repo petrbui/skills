@@ -1,7 +1,7 @@
 # GapHunter
 
 <p align="center">
-  <img src="hero.png" alt="GapHunter — Locating Knowledge Gaps" width="600" />
+  <img src="hero.png" alt="GapHunter — Locating Knowledge Gaps" width="100%" />
 </p>
 
 > The adaptive AI teacher that finds your weak spots and fills them —
