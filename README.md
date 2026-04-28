@@ -188,8 +188,17 @@ Copy `SKILL.md` to your agent's skills directory, then invoke with:
 | `my progress` | Show dashboard |
 | `export session` | Generate NotebookLM digest |
 | `switch to visual mode` | Change teaching style |
+| `change focus to [topic]` | Switch what you're learning without losing progress |
 | `continue` | Override a pause |
 | `reset profile` | Start fresh |
+
+---
+
+## Examples
+
+See the [`examples/`](examples/) folder for real session transcripts:
+- [`session.md`](examples/session.md) — PM learning APIs from scratch
+- [`session-dev.md`](examples/session-dev.md) — Senior dev with Deep Mode, vocab lookup, and The Ambush
 
 ---
 

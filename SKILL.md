@@ -619,5 +619,6 @@ Deep Mode is for developers only. Non-developer roles always use Light Mode.
 | `export session` | Generate NotebookLM digest |
 | `switch to [format] mode` | Change teaching style |
 | `switch to light/deep mode` | Change mode (developers only) |
+| `change focus to [topic]` | Change what you're learning without resetting progress |
 | `continue` | Override a pause suggestion |
 | `reset profile` | Delete progress file, start fresh |
