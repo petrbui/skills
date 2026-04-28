@@ -67,15 +67,40 @@ OR use whatever git tools your platform provides.
 Analyze to detect patterns used and likely knowledge gaps.
 
 **For developers — Deep Mode:**
-Use platform code intelligence tools:
-- Claude Code → LSP tool + Read tool
-- Cursor → workspace code intelligence
-- Copilot → VS Code workspace tools
-- Other → available file reading tools
+Use platform code intelligence tools to detect real gaps from actual code.
+
+Step 1 — List source files (use available file/LSP tools):
+- Claude Code → LSP document symbols + directory listing
+- Cursor → workspace file index
+- Other agents → use available file listing tools
 - Fallback → switch to Light Mode automatically
+
+Step 2 — Scan for patterns (read source files, not config/secrets):
+Look for these signals and map to likely gaps:
+
+| Pattern found in code | Likely gap to add |
+|----------------------|-------------------|
+| async/await used | → check if Promises understood |
+| useCallback/useMemo | → React memoization + referential equality |
+| Optional chaining (?.) | → nullish coalescing + null safety |
+| Generic types <T> | → TypeScript generics |
+| Object.entries/keys | → iterating objects |
+| try/catch blocks | → error handling patterns |
+| setTimeout/setInterval | → event loop |
+| Array.reduce | → functional array methods |
+| Spread operator (...) | → rest/spread + shallow copy |
+| import/export | → module systems (ESM vs CJS) |
+
+Step 3 — Cross-reference against MASTERED list. Only surface gaps the
+developer hasn't already covered.
 
 NEVER read: `.env` `.env.*` `*.secret` `*credentials*` `*token*` `*.pem` `*.key`
 ONLY read: source code files (`.ts` `.js` `.tsx` `.py` `.go` `.rs` etc.)
+
+If the user shares a secret, key, or password accidentally:
+- Do NOT echo or repeat the value back (not even to confirm refusal)
+- Say: "I won't store the credentials you shared" — never repeat the value
+- Recommend a password manager or secrets manager instead
 
 **For non-developers — Curiosity scan:**
 Ask:
@@ -213,7 +238,7 @@ This check comes BEFORE the analogy, BEFORE the code, BEFORE anything.
 
 ### Depth calibration by role
 
-- Junior Dev   → analogies, slower pace, encouragement
+- Junior Dev   → analogies, slower pace, warm encouragement ("great question", "you're building real instincts here")
 - Mid Dev      → balanced, some assumed knowledge
 - Senior Dev   → shorter, harder examples, skip basics
 - Team Lead    → add team/architecture implications
