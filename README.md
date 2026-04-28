@@ -32,12 +32,20 @@ GapHunter is not just for developers. It adapts to who you are:
 flowchart TD
     A[Start session] --> B[Load progress file]
     B --> C{First run?}
-    C -->|Yes| D[Self-assessment + format + mode + gap scan]
+    C -->|Yes| D1[Role?]
+    D1 --> D2[Current stack / tools?]
+    D2 --> D3[What do you want to learn?\ncurrent stack · new language · specific topic · suggest]
+    D3 --> D4[Experience?]
+    D4 --> D5[Learning preferences?]
+    D5 --> D6[Teaching style?]
+    D6 --> D7{Developer?}
+    D7 -->|Yes| D8[Light or Deep mode?]
+    D7 -->|No| E
+    D8 --> E
     C -->|No| E[Show dashboard]
-    D --> E
     E --> F{You pick}
     F -->|concept| G[Check prerequisites]
-    F -->|suggest| H[Claude picks your gap]
+    F -->|suggest| H[GapHunter picks your gap]
     F -->|vocab term| V[Quick definition]
     G --> I[Teach it]
     I --> J[Comprehension check — own words]
@@ -108,12 +116,13 @@ See the Install section below for your platform.
 Use the gaphunter skill
 ```
 
-**Step 3 — Answer 4 setup questions**
-GapHunter will ask:
-- What's your role? (dev, PM, designer, etc.)
-- What tools do you use?
+**Step 3 — Answer 5 setup questions**
+GapHunter will ask one at a time:
+- What's your role?
+- What's your current stack or tools?
+- What do you want to learn? (your stack, a new language, a specific topic, or let GapHunter suggest)
 - How long have you been in your field?
-- Do you have ADHD or dyslexia?
+- Any learning preferences? (ADHD/dyslexia or standard)
 
 Honest answers = better lessons.
 
@@ -168,7 +177,7 @@ Copy `SKILL.md` to your agent's skills directory, then invoke with:
 | Say | Action |
 |-----|--------|
 | `teach me closures` | Start a lesson |
-| `suggest` | Claude picks your next gap |
+| `suggest` | GapHunter picks your next gap |
 | `skip closures` | Quick verify → mark as known |
 | `vocab API` | Plain-English definition, no full lesson |
 | `ambush me` | Fire The Ambush now |
