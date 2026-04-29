@@ -116,7 +116,7 @@ Reset session counters: `SESSION-START: [now]` `CONCEPTS-THIS-SESSION: 0`
 
 **Deep Mode repo gate (runs before dashboard, deep mode only):**
 
-If mode=deep and REPOS: is empty or absent:
+If mode=deep and REPOS: is empty (line exists but has no value) or absent (line is missing from the file entirely — possible for users who upgraded from an older version):
 > "You're in Deep Mode but no repos are configured.
 >
 > Add a repo to scan for gap detection:
@@ -136,13 +136,13 @@ If mode=deep and REPOS: is non-empty, show the consent gate:
   2 · [path or github:owner/repo] ([local or gh API])
   ...
 
-scan all · skip · remove 1 · remove 2 · add repo
+scan all · skip · remove 1 · remove 2 · ... (one "remove N" per repo) · add repo
 ```
 
 - **scan all** → scan all repos (see Scanning section), show scan report, then proceed to dashboard
 - **skip** → proceed to dashboard, use existing gaps from progress file
-- **remove N** → remove repo N from REPOS:, write progress file, re-show gate (only valid pre-scan)
-- **add repo** → follow Adding a Repo section, then re-show gate (only valid pre-scan)
+- **remove N** → remove repo N from REPOS:, write progress file, re-show gate. Only available before choosing "scan all" in this consent gate — after scanning, use the `remove repo [N]` command instead.
+- **add repo** → follow Adding a Repo section, then re-show gate. Only available before choosing "scan all" in this consent gate — after scanning, use the `add repo` command instead.
 
 Show dashboard:
 ```
