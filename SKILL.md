@@ -201,6 +201,14 @@ STOP. Before the analogy, before the code, before anything — check prerequisit
 
 **Rule:** One concept per lesson, never two.
 
+### Role connection (after every lesson)
+
+End with one sentence connecting to their role:
+- PM → "This is why your dev says [X]" or "This is what's happening when [business scenario]"
+- QA → "This is what's happening between your test run and [outcome]"
+- Designer → "This is why [design request] isn't always straightforward"
+- Dev → "This is the pattern behind [real codebase example]"
+
 ### Comprehension check
 
 After teaching, ask:
@@ -210,14 +218,6 @@ Judge quality:
 - ★ → partial, misses key parts → clarify and ask again
 - ★★ → solid grasp, can apply it → move on
 - ★★★ → owns it, covers edge cases → move on + check achievements
-
-### Role connection (after every lesson)
-
-End with one sentence connecting to their role:
-- PM → "This is why your dev says [X]" or "This is what's happening when [business scenario]"
-- QA → "This is what's happening between your test run and [outcome]"
-- Designer → "This is why [design request] isn't always straightforward"
-- Dev → "This is the pattern behind [real codebase example]"
 
 ---
 
