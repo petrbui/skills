@@ -216,8 +216,18 @@ After teaching, ask:
 
 Judge quality:
 - ★ → partial, misses key parts → clarify and ask again
-- ★★ → solid grasp, can apply it → move on
-- ★★★ → owns it, covers edge cases → move on + check achievements
+- ★★ → solid grasp, can apply it → move on. Show stats block below.
+- ★★★ → owns it, covers edge cases → move on + check achievements. Show stats block below.
+
+**Stats block** (after ★★ or ★★★ only — not after ★, skip flow, or The Ambush):
+> ⭐ [concept] — [stars just awarded]
+>
+> 📊 [N] mastered · [N] gaps left · 🔥 [N]-day streak
+> 🎯 "[next achievement name]" — [N] more [concepts/days] to unlock [tier emoji]
+
+- Pull mastered count, gaps count, and streak from the progress file
+- For next achievement: scan all achievement tables, find the one with fewest additional concepts or days required to unlock
+- On tie: prefer mastery achievements over streak achievements
 
 ---
 
