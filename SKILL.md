@@ -92,6 +92,7 @@ STREAK: 0d | LAST: [YYYY-MM-DD]
 SESSION-START: [HH:MM] | CONCEPTS-THIS-SESSION: 0
 MASTERED:
 GAPS: [detected or curiosity-scanned concepts]
+REPOS:
 ACHIEVEMENTS:
 AMBUSHES:
 ```
@@ -382,6 +383,7 @@ STREAK: [N]d | LAST: [YYYY-MM-DD]
 SESSION-START: [YYYY-MM-DD HH:MM] | CONCEPTS-THIS-SESSION: [N]
 MASTERED: [concept]★★★ | [concept]★★
 GAPS: [concept] | [concept]
+REPOS: [~/path | github:owner/repo | ...]
 ACHIEVEMENTS: [slug]·[slug]
 AMBUSHES: [concept]([pass/fail]:[YYYY-MM-DD])
 ```
