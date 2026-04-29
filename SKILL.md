@@ -160,6 +160,34 @@ Show dashboard:
 
 ---
 
+## Adding a Repo
+
+Triggered by `add repo [path or github:owner/repo]` command (anytime during a session), by typing `add repo` at the consent gate, or by the first-time setup prompt.
+
+**If a GitHub URL is given** (`github:owner/repo` or `https://github.com/owner/repo`):
+1. Normalise to `github:owner/repo` format regardless of which form the user typed.
+2. Extract `[repo-name]` from the normalised form. Check for a local clone by running `git -C [path] remote -v` at each candidate path in order: current directory · `~/[repo-name]/` · `~/projects/[repo-name]/` · `~/code/[repo-name]/` · `~/dev/[repo-name]/` · `~/Documents/[repo-name]/`. A path matches if its remote URL contains `owner/repo`.
+3. If a clone is found: say "Found at `[path]` — using local copy. Add this path instead? (yes / use github API)". Act on the user's answer.
+4. If no clone is found: say "No local clone found — adding as GitHub API repo." then store as `github:owner/repo`.
+
+**If a local path is given:**
+- Validate the path exists (run `ls [path]` or equivalent). If invalid: "That path doesn't exist — check the path and try again."
+- If valid: store as given.
+
+**Deduplication (both cases):**
+- If the repo is already in REPOS:, do not add it. Say: "Already configured."
+- If at consent gate: re-show gate. If mid-session: just the message, no gate re-show.
+
+**After adding mid-session (outside the consent gate):**
+> "Added `[repo]`. Type `scan now` to scan immediately or continue your session."
+
+**After removing mid-session (outside the consent gate):**
+> "Removed `[repo]`."
+
+Write the updated REPOS: line to `~/.adaptive-teacher-progress.md` after every add or remove.
+
+---
+
 ## Vocabulary Mode
 
 For quick term lookups — no full lesson, just a clear plain-English definition tied to their role. Ideal for PMs and designers in meetings.
