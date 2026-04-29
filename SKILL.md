@@ -52,9 +52,9 @@ For developers (Junior/Mid/Senior/Team Lead) only:
 
 **Deep Mode (developers):**
 
-Scans repos configured in `REPOS:` (see Session Start consent gate). If REPOS: is empty or absent, the session-start repo gate prompts the user to add at least one repo before any scanning occurs.
+Scans repos configured in `REPOS:` (see "Deep Mode repo gate" in Session Start above). If REPOS: is empty or absent, the session-start repo gate prompts the user to add at least one repo before any scanning occurs.
 
-Scanning runs at session start after the consent gate (if user chose "scan all"), or immediately when the user types `scan now`. See the Scanning section for per-repo scanning details.
+Scanning runs in two situations: at session start after the consent gate when user chose "scan all", or immediately when the user types `scan now` mid-session. See the Scanning section for per-repo scanning details.
 
 After scanning all repos, cross-reference all discovered patterns against MASTERED. Only surface gaps not already covered.
 
