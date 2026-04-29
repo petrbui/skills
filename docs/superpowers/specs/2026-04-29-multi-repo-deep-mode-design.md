@@ -11,7 +11,7 @@ Deep Mode currently scans one local repo. Developers often work across multiple 
 
 ## Solution
 
-Add a `REPOS:` field to the progress file. At session start, show a consent gate listing configured repos and let the user scan, skip, or manage the list inline. GitHub repos are read via `gh` API (no cloning). Token usage is reported after every scan.
+Add a `REPOS:` field to the progress file. At session start, show a consent gate listing configured repos and let the user scan, skip, or manage the list inline. GitHub repos are read via `gh` API (no cloning). A scan report is shown after every scan.
 
 ---
 
@@ -42,7 +42,7 @@ When mode=deep and `REPOS:` is empty, GapHunter prompts automatically at session
 >
 > Type a path or URL, or type `skip` to use existing gaps."
 
-If skipped, GapHunter proceeds without code scanning and does not ask again until the user types `add repo`.
+If skipped, GapHunter proceeds without code scanning. The prompt appears again next session until at least one repo is added.
 
 ---
 
@@ -58,7 +58,7 @@ Shown at session start when `REPOS:` is non-empty, before any scanning:
 scan all · skip · remove 1 · remove 2 · add repo
 ```
 
-- **scan all** → scan all repos, show token usage after
+- **scan all** → scan all repos, show scan report after
 - **skip** → proceed without scanning, use existing gaps from progress file
 - **remove N** → remove that repo from the list, re-show gate
 - **add repo** → prompt for a new path or GitHub URL, then re-show gate
@@ -73,7 +73,7 @@ When user types `add repo` (from gate or anytime):
 
 **If GitHub URL given:**
 1. Extract repo name from URL
-2. Check for local clone by running `git -C [path] remote -v` via Bash in each of: current directory, `~/projects/`, `~/code/`, `~/dev/`, `~/Documents/`, and `~/[repo-name]/` directly. Match if the remote URL contains `owner/repo`.
+2. Extract `[repo-name]` from the URL. Check for a local clone by running `git -C [path] remote -v` via Bash at each candidate path: current directory, `~/[repo-name]/`, `~/projects/[repo-name]/`, `~/code/[repo-name]/`, `~/dev/[repo-name]/`, `~/Documents/[repo-name]/`. Match if the remote URL contains `owner/repo`.
 3. If found: "Found at `[path]` — using local copy. Add this path instead?" (yes / use github API)
 4. If not found: store as `github:owner/repo`, use `gh` API on scan
 
