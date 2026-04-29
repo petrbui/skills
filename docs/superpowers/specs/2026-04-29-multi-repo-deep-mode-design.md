@@ -32,7 +32,7 @@ REPOS: ~/projects/my-app | github:petrbui/GapHunter
 
 ## First-Time Setup
 
-When mode=deep and `REPOS:` is empty, GapHunter prompts automatically at session start:
+When mode=deep and `REPOS:` is empty or absent, GapHunter prompts automatically at session start:
 
 > "You're in Deep Mode but no repos are configured.
 >
@@ -71,13 +71,17 @@ When user types `add repo` (from gate or anytime):
 
 > "Enter a local path or GitHub repo (e.g. `~/projects/app` or `github:owner/repo`):"
 
-**If GitHub URL given:**
-1. Extract `[repo-name]` from the URL. Check for a local clone by running `git -C [path] remote -v` via Bash at each candidate path: current directory, `~/[repo-name]/`, `~/projects/[repo-name]/`, `~/code/[repo-name]/`, `~/dev/[repo-name]/`, `~/Documents/[repo-name]/`. Match if the remote URL contains `owner/repo`.
-2. If found: "Found at `[path]` — using local copy. Add this path instead?" (yes / use github API)
-3. If not found: store as `github:owner/repo`, use `gh` API on scan
+**If GitHub URL given** (`github:owner/repo` or `https://github.com/owner/repo`):
+1. Normalise to `github:owner/repo` format regardless of input form.
+2. Extract `[repo-name]` from the normalised form. Check for a local clone by running `git -C [path] remote -v` via Bash at each candidate path: current directory, `~/[repo-name]/`, `~/projects/[repo-name]/`, `~/code/[repo-name]/`, `~/dev/[repo-name]/`, `~/Documents/[repo-name]/`. Match if the remote URL contains `owner/repo`.
+3. If found: "Found at `[path]` — using local copy. Add this path instead?" (yes / use github API)
+4. If not found: store as `github:owner/repo`, use `gh` API on scan
 
 **If local path given:**
-- Store as-is
+- Validate the path exists before storing. If invalid: "That path doesn't exist — check the path and try again."
+
+**Deduplication (both cases):**
+- If the repo is already in `REPOS:`, do not add it again. Say: "Already configured." and re-show the gate.
 
 ---
 
