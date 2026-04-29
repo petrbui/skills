@@ -226,7 +226,7 @@ Continue scanning any local repos normally. Do not fall back to Light Mode.
 ### Scan report
 
 Shown immediately after all repos have been scanned, before proceeding to the dashboard or session:
-> "📊 Scan complete — [N] repo scanned · [N] files read · ~[N]K chars of context"
+> "📊 Scan complete — [N] repos scanned · [N] files read · ~[N]K chars of context"
 
 - N repos = successfully scanned repos only; skipped repos are not counted
 - Singular/plural: "1 repo scanned" not "1 repos scanned"; "2 repos scanned" for two or more
@@ -533,6 +533,6 @@ Deep Mode is for developers only. Non-developer roles always use Light Mode.
 | `continue` | Override a pause suggestion |
 | `reset profile` | Delete progress file, start fresh |
 | `add repo [path or github:owner/repo]` | Add a repo to REPOS: |
-| `show repos` | List configured repos with numbers |
+| `show repos` | List configured repos with numbers and type (local / gh API), same format as consent gate |
 | `remove repo [N]` | Remove repo by number (run `show repos` first if needed) |
 | `scan now` | Scan all repos in REPOS: immediately, show scan report |
