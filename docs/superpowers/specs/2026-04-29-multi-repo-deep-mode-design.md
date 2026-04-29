@@ -73,10 +73,9 @@ When user types `add repo` (from gate or anytime):
 
 **If GitHub URL given:**
 1. Extract repo name from URL
-2. Check for local clone in: current directory, `~/projects/`, `~/code/`, `~/dev/`, `~/Documents/`
-3. Match by comparing `git remote -v` output against the GitHub URL
-4. If found: "Found at `~/projects/GapHunter` — using local copy. Add this path instead?" (yes / use github API)
-5. If not found: store as `github:owner/repo`, use `gh` API on scan
+2. Check for local clone by running `git -C [path] remote -v` via Bash in each of: current directory, `~/projects/`, `~/code/`, `~/dev/`, `~/Documents/`, and `~/[repo-name]/` directly. Match if the remote URL contains `owner/repo`.
+3. If found: "Found at `[path]` — using local copy. Add this path instead?" (yes / use github API)
+4. If not found: store as `github:owner/repo`, use `gh` API on scan
 
 **If local path given:**
 - Store as-is
@@ -98,10 +97,10 @@ Same pattern-matching as current Deep Mode. Reads source files, maps patterns to
 
 **Default branch only.** No per-repo branch config.
 
-### Token usage report (after all repos scanned)
-> "📊 Scan complete — ~[N] tokens used across [N] repos ([N] files read)"
+### Scan report (after all repos scanned)
+> "📊 Scan complete — [N] repos · [N] files read · ~[N]K chars of context"
 
-Shown before proceeding to dashboard.
+Character count is summed from all files read during the scan. Shown before proceeding to dashboard. GapHunter does not report actual token counts (not accessible from within a skill).
 
 ---
 
@@ -119,8 +118,8 @@ If `gh` is not installed or not authenticated when scanning a GitHub repo:
 | Command | Action |
 |---------|--------|
 | `add repo [path or github:owner/repo]` | Add a repo to REPOS: |
-| `remove repo [name or number]` | Remove a repo from REPOS: |
-| `show repos` | List configured repos |
+| `show repos` | List configured repos with numbers |
+| `remove repo [N]` | Remove repo by number (run `show repos` first if needed) |
 
 ---
 
