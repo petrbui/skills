@@ -157,7 +157,7 @@ Your progress is saved. Your streak continues.
 
 ### Easiest — any platform
 ```bash
-npx skills add petrbui/GapHunter
+npx skills add petrbui/GapHunter -g
 ```
 
 ### Claude Code (manual)
