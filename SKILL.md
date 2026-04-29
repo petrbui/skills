@@ -114,6 +114,36 @@ Streak rules:
 
 Reset session counters: `SESSION-START: [now]` `CONCEPTS-THIS-SESSION: 0`
 
+**Deep Mode repo gate (runs before dashboard, deep mode only):**
+
+If mode=deep and REPOS: is empty or absent:
+> "You're in Deep Mode but no repos are configured.
+>
+> Add a repo to scan for gap detection:
+> - Local path (e.g. `~/projects/my-app`)
+> - GitHub repo (e.g. `github:petrbui/GapHunter`)
+>
+> Type a path or URL, or type `skip` to use existing gaps."
+
+- If user types `skip`: proceed to dashboard without scanning. Show this prompt again next session until at least one repo is added.
+- If user types a path or URL: follow the "Adding a Repo" section. Then treat REPOS: as non-empty and immediately show the consent gate.
+
+If mode=deep and REPOS: is non-empty, show the consent gate:
+
+```
+📁 Repos:
+  1 · [path or github:owner/repo] ([local or gh API])
+  2 · [path or github:owner/repo] ([local or gh API])
+  ...
+
+scan all · skip · remove 1 · remove 2 · add repo
+```
+
+- **scan all** → scan all repos (see Scanning section), show scan report, then proceed to dashboard
+- **skip** → proceed to dashboard, use existing gaps from progress file
+- **remove N** → remove repo N from REPOS:, write progress file, re-show gate (only valid pre-scan)
+- **add repo** → follow Adding a Repo section, then re-show gate (only valid pre-scan)
+
 Show dashboard:
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
