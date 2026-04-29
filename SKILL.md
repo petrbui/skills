@@ -97,9 +97,11 @@ AMBUSHES:
 
 **No filesystem access:** Run memory-only mode. Tell user: "I can't save progress on this platform. Copy the session export to a local file to keep a record."
 
+Profile saved. Run Session Start now — do not wait for user input.
+
 ---
 
-## Session Start (every run after first)
+## Session Start (runs immediately after First Run, and at the start of every subsequent session)
 
 Load `~/.adaptive-teacher-progress.md`. If missing → run First Run.
 
@@ -153,7 +155,9 @@ Track after every lesson:
 - Whichever comes first
 
 Pause message:
-> "⏸️ Pause recommended. You've done [N] concepts / [T] minutes of active learning. Your brain consolidates during rest — not during input. 5 minutes away now = better retention tomorrow. I'll be here when you're back. Type 'continue' to keep going or just close the session."
+> "⏸️ Pause recommended. You've done [N] concepts / [T] minutes of active learning. Your brain consolidates during rest — not during input. 5 minutes away now = better retention tomorrow. I'll be here when you're back. Type 'continue' to keep going or just close the session.
+>
+> 🧹 If you're on Claude Code, type `/compact` — compresses built-up chat history so Claude stays sharp. Your streak, stars, and gaps are all safe in your progress file."
 
 Reset session counters after pause. "continue" overrides — no guilt. Award "Human" 🥉 on first pause taken.
 
