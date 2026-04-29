@@ -44,6 +44,8 @@ When mode=deep and `REPOS:` is empty or absent, GapHunter prompts automatically 
 
 If skipped, GapHunter proceeds without code scanning. The prompt appears again next session until at least one repo is added.
 
+After successfully adding a repo here, transition immediately to the consent gate (REPOS: is now non-empty — treat it as a normal session-start gate).
+
 ---
 
 ## Consent Gate (every session)
@@ -58,10 +60,10 @@ Shown at session start when `REPOS:` is non-empty, before any scanning:
 scan all · skip · remove 1 · remove 2 · add repo
 ```
 
-- **scan all** → scan all repos, show scan report after
+- **scan all** → scan all repos, show scan report after, then proceed to session
 - **skip** → proceed without scanning, use existing gaps from progress file
-- **remove N** → remove that repo from the list, re-show gate
-- **add repo** → prompt for a new path or GitHub URL, then re-show gate
+- **remove N** → remove that repo from the list, re-show gate (only valid pre-scan)
+- **add repo** → prompt for a new path or GitHub URL, then re-show gate (only valid pre-scan)
 
 ---
 
@@ -75,13 +77,21 @@ When user types `add repo` (from gate or anytime):
 1. Normalise to `github:owner/repo` format regardless of input form.
 2. Extract `[repo-name]` from the normalised form. Check for a local clone by running `git -C [path] remote -v` via Bash at each candidate path: current directory, `~/[repo-name]/`, `~/projects/[repo-name]/`, `~/code/[repo-name]/`, `~/dev/[repo-name]/`, `~/Documents/[repo-name]/`. Match if the remote URL contains `owner/repo`.
 3. If found: "Found at `[path]` — using local copy. Add this path instead?" (yes / use github API)
-4. If not found: store as `github:owner/repo`, use `gh` API on scan
+4. If not found: say "No local clone found — adding as GitHub API repo." then store as `github:owner/repo`
 
 **If local path given:**
 - Validate the path exists before storing. If invalid: "That path doesn't exist — check the path and try again."
 
 **Deduplication (both cases):**
-- If the repo is already in `REPOS:`, do not add it again. Say: "Already configured." and re-show the gate.
+- If the repo is already in `REPOS:`, do not add it again. Say: "Already configured."
+- If at consent gate: re-show gate. If mid-session: no gate re-show, just the message.
+
+**After adding (outside the consent gate — mid-session only):**
+- Acknowledge: "Added `[repo]`. Type `scan now` to scan immediately or continue your session."
+- Do not re-show the full gate mid-session.
+
+**After removing (outside the consent gate — mid-session only):**
+- Acknowledge: "Removed `[repo]`." — no gate re-show.
 
 ---
 
@@ -89,6 +99,8 @@ When user types `add repo` (from gate or anytime):
 
 ### Local repos
 Same pattern-matching as current Deep Mode. Reads source files, maps patterns to gaps, cross-references MASTERED.
+
+If a local path in `REPOS:` no longer exists at scan time: skip it with note "Skipping `[path]` — directory not found. Use `remove repo [N]` to clean up."
 
 ### GitHub repos (`gh` API)
 1. Check `gh auth status` — if not authed, skip this repo with note: "Skipping `github:owner/repo` — run `gh auth login` first."
@@ -100,10 +112,17 @@ Same pattern-matching as current Deep Mode. Reads source files, maps patterns to
 
 **Default branch only.** No per-repo branch config.
 
-### Scan report (after all repos scanned)
-> "📊 Scan complete — [N] repos · [N] files read · ~[N]K chars of context"
+**Large repo handling:** The tree API returns `truncated: true` for repos exceeding GitHub's size limits (~100k files or 7MB). If truncated, proceed with the partial tree and note: "Large repo — tree truncated, scanning partial file list."
 
-Character count is summed from all files read during the scan. Shown before proceeding to dashboard. GapHunter does not report actual token counts (not accessible from within a skill).
+### Scan report (after all repos scanned)
+> "📊 Scan complete — [N] repos scanned · [N] files read · ~[N]K chars of context"
+
+- N repos = successfully scanned repos only (skipped repos not counted). Use correct singular/plural: "1 repo scanned" not "1 repos scanned".
+- N files = total files read across all scanned repos
+- Chars = total characters read, shown as ~NNK
+- Shown immediately after scanning, before proceeding to session
+- Any newly discovered gaps are merged into the existing GAPS list in the progress file
+- GapHunter does not report actual token counts (not accessible from within a skill)
 
 ---
 
@@ -125,6 +144,7 @@ If `gh` is not installed when scanning a GitHub repo:
 | `add repo [path or github:owner/repo]` | Add a repo to REPOS: |
 | `show repos` | List configured repos with numbers |
 | `remove repo [N]` | Remove repo by number (run `show repos` first if needed) |
+| `scan now` | Scan all repos in REPOS: immediately, show scan report. Available anytime during a session. |
 
 ---
 
