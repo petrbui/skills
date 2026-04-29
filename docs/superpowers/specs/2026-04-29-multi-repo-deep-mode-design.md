@@ -72,10 +72,9 @@ When user types `add repo` (from gate or anytime):
 > "Enter a local path or GitHub repo (e.g. `~/projects/app` or `github:owner/repo`):"
 
 **If GitHub URL given:**
-1. Extract repo name from URL
-2. Extract `[repo-name]` from the URL. Check for a local clone by running `git -C [path] remote -v` via Bash at each candidate path: current directory, `~/[repo-name]/`, `~/projects/[repo-name]/`, `~/code/[repo-name]/`, `~/dev/[repo-name]/`, `~/Documents/[repo-name]/`. Match if the remote URL contains `owner/repo`.
-3. If found: "Found at `[path]` — using local copy. Add this path instead?" (yes / use github API)
-4. If not found: store as `github:owner/repo`, use `gh` API on scan
+1. Extract `[repo-name]` from the URL. Check for a local clone by running `git -C [path] remote -v` via Bash at each candidate path: current directory, `~/[repo-name]/`, `~/projects/[repo-name]/`, `~/code/[repo-name]/`, `~/dev/[repo-name]/`, `~/Documents/[repo-name]/`. Match if the remote URL contains `owner/repo`.
+2. If found: "Found at `[path]` — using local copy. Add this path instead?" (yes / use github API)
+3. If not found: store as `github:owner/repo`, use `gh` API on scan
 
 **If local path given:**
 - Store as-is
@@ -104,12 +103,14 @@ Character count is summed from all files read during the scan. Shown before proc
 
 ---
 
-## `gh` Not Available
+## `gh` Not Installed
 
-If `gh` is not installed or not authenticated when scanning a GitHub repo:
-- Skip that repo silently with a one-line note: "Skipping `github:owner/repo` — `gh` not available."
+If `gh` is not installed when scanning a GitHub repo:
+- Skip that repo with a one-line note: "Skipping `github:owner/repo` — `gh` not installed."
 - Continue scanning any local repos normally
 - Do not fall back to Light Mode
+
+(Not authenticated is handled separately during scanning — see GitHub repos scan flow above.)
 
 ---
 
@@ -135,4 +136,4 @@ All existing Deep Mode security rules apply to every repo:
 
 ## Files Changed
 
-- `SKILL.md` — consent gate, first-time setup prompt, `add/remove/show repos` commands, GitHub scan flow, token report, security rules extension
+- `SKILL.md` — consent gate, first-time setup prompt, `add/remove/show repos` commands, GitHub scan flow, scan report, security rules extension
