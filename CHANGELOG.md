@@ -6,6 +6,19 @@ Format: [Keep a Changelog](https://keepachangelog.com) · Versioning: [Semantic 
 
 ---
 
+## [1.6.0] — 2026-04-29
+
+### Added
+- **Multi-Repo Deep Mode**: configure multiple repos (local paths and GitHub repos) via a new `REPOS:` field in the progress file.
+- **Consent gate**: shown at session start when repos are configured — scan all, skip, add, or remove repos before proceeding to the dashboard.
+- **First-time setup prompt**: when mode=deep and no repos are configured, GapHunter prompts to add one at session start (skippable, repeats next session).
+- **GitHub repo scanning**: reads repos via `gh` CLI API — no cloning required. Handles auth failures and missing `gh` installation gracefully per-repo.
+- **Local clone detection**: when adding a GitHub URL, GapHunter checks 6 common local paths for an existing clone and offers to use it instead.
+- **Scan report**: after every scan shows repos scanned, files read, and approximate chars of context (correct singular/plural).
+- **New commands**: `add repo`, `show repos`, `remove repo [N]`, `scan now`.
+
+---
+
 ## [1.5.0] — 2026-04-29
 
 ### Added
