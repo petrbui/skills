@@ -142,7 +142,7 @@ scan all · skip · remove 1 · remove 2 · ... (one "remove N" per repo) · add
 - **scan all** → scan all repos (see Scanning section), show scan report, then proceed to dashboard
 - **skip** → proceed to dashboard, use existing gaps from progress file
 - **remove N** → remove repo N from REPOS:, write progress file, re-show gate. Only available before choosing "scan all" in this consent gate — after scanning, use the `remove repo [N]` command instead.
-- **add repo** → follow Adding a Repo section, then re-show gate. Only available before choosing "scan all" in this consent gate — after scanning, use the `add repo` command instead.
+- **add repo** → follow Adding a Repo section, then re-show gate. Only available before choosing "scan all" in this consent gate — after scanning, type `add repo [path]` mid-session to add a new repo without re-showing the gate.
 
 Show dashboard:
 ```
