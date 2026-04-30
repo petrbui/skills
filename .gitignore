@@ -1,2 +1,16 @@
+# dependencies
+node_modules/
+
+# OS
 .DS_Store
+Thumbs.db
+
+# editors
 *.swp
+*.swo
+.idea/
+.vscode/
+
+# misc
+*.log
+.env
