@@ -172,14 +172,14 @@ npx skills add petrbui/GapHunter -g
 ```bash
 mkdir -p ~/.claude/skills/gaphunter
 curl -o ~/.claude/skills/gaphunter/SKILL.md \
-  https://raw.githubusercontent.com/petrbui/GapHunter/main/SKILL.md
+  https://raw.githubusercontent.com/petrbui/GapHunter/main/skills/gaphunter/SKILL.md
 ```
 
 ### Gemini CLI (manual)
 ```bash
 mkdir -p ~/.gemini/skills/gaphunter
 curl -o ~/.gemini/skills/gaphunter/SKILL.md \
-  https://raw.githubusercontent.com/petrbui/GapHunter/main/SKILL.md
+  https://raw.githubusercontent.com/petrbui/GapHunter/main/skills/gaphunter/SKILL.md
 ```
 Then: `"Use the gaphunter skill to teach me [concept]"`
 
