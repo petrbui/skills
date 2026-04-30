@@ -268,7 +268,8 @@ When the concept is a **specific library or framework API** (React hooks, Next.j
 2. `query-docs` with the specific topic/function
 3. Base the lesson on what the docs say, not training data alone
 
-If context7 is unavailable: warn **before** teaching — "⚠️ No doc check on this platform — teaching from training data. Verify before you ship." Then proceed.
+If context7 is unavailable: warn **before** teaching — "⚠️ No doc check — teaching from training data. Verify before you ship.
+→ Enable it: `claude mcp add context7 -- npx -y @upstash/context7-mcp@latest`" Then proceed.
 
 Skip this step for general concepts (closures, async/await, event loop, algorithms, design patterns) — these are stable.
 
