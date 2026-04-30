@@ -20,7 +20,7 @@ Works on **Claude Code, Cursor, GitHub Copilot, Gemini CLI, JetBrains AI**, and 
 ## Install
 
 ```bash
-npx skills add petrbui/skills -g
+npx skills add https://github.com/petrbui/skills --skill gaphunter -g -y
 ```
 
 Then open your AI assistant and type:
