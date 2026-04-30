@@ -76,18 +76,25 @@ Ask non-developers: "Here's a starter pack for your role. Want to begin here, or
 
 ### Save Profile
 
-Write to `~/.adaptive-teacher-progress.md`:
+Write to `~/.adaptive-teacher-progress.md` with EXACTLY these values — do not invent, pre-fill, or guess any field:
 
 ```
 PROFILE: [Role] | [Stack/Tools] | focus=[learn-focus] | [Years]yrs | mode=[light/deep] | format=[name]
-STREAK: 0d | LAST: [YYYY-MM-DD]
-SESSION-START: [HH:MM] | CONCEPTS-THIS-SESSION: 0
+STREAK: 0d | LAST: [today's date as YYYY-MM-DD]
+SESSION-START: [current time as YYYY-MM-DD HH:MM] | CONCEPTS-THIS-SESSION: 0
 MASTERED:
-GAPS: [detected or curiosity-scanned concepts]
+GAPS: [only concepts the user explicitly confirmed from the starter pack or curiosity scan — if none confirmed yet, leave blank]
 REPOS:
 ACHIEVEMENTS:
 AMBUSHES:
 ```
+
+**Field rules (no exceptions):**
+- `STREAK: 0d` — always literal `0d` on first run, never any other number
+- `MASTERED:` — label only, nothing after the colon
+- `ACHIEVEMENTS:` — label only, nothing after the colon
+- `AMBUSHES:` — label only, nothing after the colon
+- `GAPS:` — only list concepts the user said yes to during this session; if none confirmed yet, label only
 
 **No filesystem access:** Run memory-only mode. Tell user: "I can't save progress on this platform. Copy the session export to a local file to keep a record."
 
@@ -105,6 +112,8 @@ Streak rules:
 - LAST = older → streak resets to 1
 
 Reset session counters: `SESSION-START: [now]` `CONCEPTS-THIS-SESSION: 0`
+
+**Partial update rule:** Read the existing file first. Then write it back changing ONLY `STREAK`, `LAST`, `SESSION-START`, and `CONCEPTS-THIS-SESSION`. Copy every other line (PROFILE, MASTERED, GAPS, REPOS, ACHIEVEMENTS, AMBUSHES) character-for-character as read. Never reconstruct the file from memory or the Progress File template.
 
 **Deep Mode repo gate (runs before dashboard, deep mode only):**
 
@@ -484,7 +493,11 @@ ACHIEVEMENTS: [slug]·[slug]
 AMBUSHES: [concept]([pass/fail]:[YYYY-MM-DD])
 ```
 
+**FORMAT reference only** — never use this template to generate values. All values must come from the actual session or from what was read from the file.
+
 Read at session start. Write after every lesson, Ambush, pause, and successful skip. If file doesn't exist → run First Run.
+
+**All writes are partial updates** — change only the fields relevant to the event (e.g. after a lesson: update MASTERED and GAPS only). Copy all other lines verbatim from the last read.
 
 **No filesystem access:** Run memory-only mode. Tell user: "I can't save progress on this platform. Copy the session export to a local file to keep a record."
 

@@ -6,6 +6,15 @@ Format: [Keep a Changelog](https://keepachangelog.com) · Versioning: [Semantic 
 
 ---
 
+## [1.7.1] — 2026-04-30
+
+### Fixed
+- **Progress file hallucination on First Run**: LLMs were fabricating plausible-looking values (streak counts, mastered concepts) instead of writing the correct zero-state. Added explicit field rules with a "no exceptions" prohibition against inventing or pre-filling any field.
+- **Full file rewrite on Session Start**: LLMs were reconstructing the entire progress file from the template instead of updating only the changed fields. Added a partial update rule to Session Start — only `STREAK`, `LAST`, `SESSION-START`, and `CONCEPTS-THIS-SESSION` are changed; all other lines are copied verbatim.
+- **Progress File template misread as fill-in prompt**: The format reference template at the bottom of the skill used placeholder-style syntax (`[concept]★★★`) that models interpreted as an invitation to generate example values. Added an explicit "FORMAT reference only" warning and a global partial update rule covering all mid-session writes.
+
+---
+
 ## [1.7.0] — 2026-04-30
 
 ### Added
