@@ -1,0 +1,7 @@
+{
+  "name": "@petrbui/skills",
+  "version": "1.0.0",
+  "description": "A collection of AI agent skills",
+  "license": "MIT",
+  "private": true
+}
