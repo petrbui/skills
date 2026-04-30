@@ -18,7 +18,7 @@ A collection of AI agent skills for Claude Code, Cursor, Gemini CLI, GitHub Copi
 The adaptive AI teacher that finds your weak spots and fills them — for developers, PMs, QA engineers, designers, and complete beginners.
 
 ```bash
-npx skills add petrbui/skills/gaphunter -g
+npx skills add petrbui/skills -g
 ```
 
 ---
