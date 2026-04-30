@@ -11,11 +11,15 @@ A collection of AI agent skills for Claude Code, Cursor, Gemini CLI, GitHub Copi
 
 ## Skills
 
-### [GapHunter](skills/gaphunter/)
+### [GapHunter](gaphunter/)
 
 <a href="https://skills.sh/petrbui/skills/gaphunter"><img src="https://img.shields.io/badge/skills.sh-gaphunter-5b21b6?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0tMSAxNHYtNEg3bDUtOHY0aDRsLTUgOHoiLz48L3N2Zz4=" alt="skills.sh" /></a>
 
 The adaptive AI teacher that finds your weak spots and fills them — for developers, PMs, QA engineers, designers, and complete beginners.
+
+- [README](gaphunter/README.md) — full docs
+- [CHANGELOG](gaphunter/CHANGELOG.md) — version history
+- [Examples](gaphunter/examples/) — real session transcripts
 
 ```bash
 npx skills add petrbui/skills -g
