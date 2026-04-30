@@ -260,6 +260,18 @@ STOP. Before the analogy, before the code, before anything — check prerequisit
 - Yes → proceed with the lesson
 - No/unsure → teach prerequisite first, then return to original concept
 
+### Doc verification — library/framework APIs only
+
+When the concept is a **specific library or framework API** (React hooks, Next.js functions, an npm package's API), fetch current docs via context7 before teaching — training data can reflect outdated patterns.
+
+1. `resolve-library-id` with the library name
+2. `query-docs` with the specific topic/function
+3. Base the lesson on what the docs say, not training data alone
+
+If context7 is unavailable: warn **before** teaching — "⚠️ I can't verify current docs on this platform — this lesson is based on my training data and may not reflect the latest API. Check the official docs after." Then proceed with the lesson.
+
+Skip this step for general concepts (closures, async/await, event loop, algorithms, design patterns) — these are stable.
+
 ### Depth calibration by role
 
 - **Junior Dev** — analogies, slower pace, warm encouragement
