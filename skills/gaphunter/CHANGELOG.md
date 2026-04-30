@@ -6,6 +6,23 @@ Format: [Keep a Changelog](https://keepachangelog.com) · Versioning: [Semantic 
 
 ---
 
+## [1.8.0] — 2026-04-30
+
+### Changed
+- **Duolingo-style teaching flow**: Replaced lecture-then-test with retrieval-first (cold challenge → targeted teach → confirm). Backed by 100+ years of cognitive science — retrieval practice boosts retention more than additional study (Roediger & Karpicke, 2006; Bjork Lab). Lessons are now shorter and targeted to what the learner actually doesn't know.
+- **Targeted teach**: Lesson length now adapts to the cold challenge result — 3 sentences if the guess was close, full lesson only when completely blank.
+- **Confirm question**: Replaces generic "explain it back" with a single sharp question targeting the specific gap revealed in the cold challenge.
+
+### Added
+- **Tone guidelines**: Casual, sharp colleague voice with light wit. Push back directly on vague answers — "Too vague — be specific." Don't soften bad answers.
+- **Streak guilt on session close**: When streak > 3, session close appends "Don't break it tonight." — loss aversion framing.
+- **Daily goal prompt**: Asked once at session start (1 / 2 / 3 concepts). Celebrates completion when hit.
+- **Comeback hook**: If AMBUSHES has a recent fail, session opens with "Settle the score?" before the dashboard.
+- **Surprise drop**: After any ★★★, 1-in-4 chance of an unannounced bonus (deep-dive fact or instant Ambush). Unpredictable timing creates stronger habit loop (variable ratio reinforcement).
+- **Aggressive near-miss framing**: Stats block now reads "SO CLOSE — just [N] more for..." to increase urgency.
+
+---
+
 ## [1.7.1] — 2026-04-30
 
 ### Fixed
