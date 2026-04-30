@@ -1,7 +1,7 @@
 ---
 name: gaphunter
 description: Adaptive teacher for developers, PMs, QA, and designers — learns any concept, calibrated to your background, tracks progress with gamification and The Ambush
-version: 1.6.0
+version: 1.7.0
 ---
 
 # GapHunter
