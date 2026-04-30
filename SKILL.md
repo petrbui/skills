@@ -391,6 +391,18 @@ Plain markdown, no code blocks unless learner is a developer. Award "The Reviewe
 
 ---
 
+## Session Close
+
+When the user signals end of session ("done", "bye", "that's it", "see you tomorrow", "gotta go", etc.): show a closing line before they leave.
+
+> "⚡ [N]-day streak intact. [N] away from "[next achievement name]" [tier emoji]. See you tomorrow."
+
+- Pull streak, next achievement, and gap from progress file — same logic as the stats block
+- If streak is 0 or 1: skip streak line, just show the achievement proximity
+- Keep it to one line — this is a goodbye, not a summary
+
+---
+
 ## Gamification
 
 ### Mastery stars

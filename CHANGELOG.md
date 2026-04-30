@@ -10,7 +10,8 @@ Format: [Keep a Changelog](https://keepachangelog.com) · Versioning: [Semantic 
 
 ### Added
 - **Doc verification step** in teaching flow: before teaching any library/framework-specific API (React hooks, Next.js functions, npm packages), GapHunter fetches current docs via context7 to ensure accuracy.
-- **Stale-data warning**: if context7 is unavailable, GapHunter warns the user *before* the lesson that the content is based on training data and may be outdated.
+- **Stale-data warning**: if context7 is unavailable, GapHunter warns the user *before* the lesson that the content is based on training data and may be outdated, with install hint: `claude mcp add context7 -- npx -y @upstash/context7-mcp@latest`.
+- **Session close hook**: when the user signals end of session ("bye", "done", etc.), GapHunter shows a one-line goodbye with streak status and goal proximity — creates pull for the next session.
 
 ---
 
