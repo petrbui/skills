@@ -113,7 +113,7 @@ If mode=deep and REPOS: is empty (line present, no value) or absent (line missin
 >
 > Add a repo to scan for gap detection:
 > - Local path (e.g. `~/projects/my-app`)
-> - GitHub repo (e.g. `github:petrbui/GapHunter`)
+> - GitHub repo (e.g. `github:owner/repo`)
 >
 > Type a path or URL, or type `skip` to use existing gaps."
 

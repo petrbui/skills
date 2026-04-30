@@ -50,7 +50,7 @@ Format: [Keep a Changelog](https://keepachangelog.com) · Versioning: [Semantic 
 ### Fixed
 - Role connection now delivered before the comprehension check, not after.
 - First Run now proceeds immediately to Session Start after saving the profile — no longer waits for user input.
-- Install command corrected (`npx skills add petrbui/GapHunter -g`).
+- Install command corrected (`npx skills add petrbui/skills -g`).
 
 ### Changed
 - SKILL.md compressed by 34% with no logic or experience changes — faster to load on all platforms.
