@@ -6,6 +6,14 @@ Format: [Keep a Changelog](https://keepachangelog.com) · Versioning: [Semantic 
 
 ---
 
+## [1.7.0] — 2026-04-30
+
+### Added
+- **Doc verification step** in teaching flow: before teaching any library/framework-specific API (React hooks, Next.js functions, npm packages), GapHunter fetches current docs via context7 to ensure accuracy.
+- **Stale-data warning**: if context7 is unavailable, GapHunter warns the user *before* the lesson that the content is based on training data and may be outdated.
+
+---
+
 ## [1.6.1] — 2026-04-30
 
 ### Changed
