@@ -22,7 +22,7 @@ The adaptive AI teacher that finds your weak spots and fills them — for develo
 - [Examples](skills/gaphunter/examples/) — real session transcripts
 
 ```bash
-npx skills add petrbui/skills -g
+npx skills add https://github.com/petrbui/skills --skill gaphunter -g -y
 ```
 
 ---
@@ -30,7 +30,7 @@ npx skills add petrbui/skills -g
 ## Install All
 
 ```bash
-npx skills add petrbui/skills -g
+npx skills add https://github.com/petrbui/skills -g -y
 ```
 
 ## License
