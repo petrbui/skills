@@ -4,6 +4,12 @@
   <img src="hero.png" alt="GapHunter — Locating Knowledge Gaps" width="100%" />
 </p>
 
+<p align="center">
+  <a href="https://skills.sh/petrbui/GapHunter"><img src="https://img.shields.io/badge/skills.sh-gaphunter-5b21b6?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0tMSAxNHYtNEg3bDUtOHY0aDRsLTUgOHoiLz48L3N2Zz4=" alt="skills.sh" /></a>
+  <a href="https://github.com/petrbui/GapHunter/stargazers"><img src="https://img.shields.io/github/stars/petrbui/GapHunter?style=flat&label=stars" alt="GitHub Stars" /></a>
+  <a href="https://github.com/petrbui/GapHunter/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License" /></a>
+</p>
+
 > The adaptive AI teacher that finds your weak spots and fills them —
 > for developers, PMs, QA engineers, designers, and complete beginners.
 
