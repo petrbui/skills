@@ -6,6 +6,13 @@ Format: [Keep a Changelog](https://keepachangelog.com) · Versioning: [Semantic 
 
 ---
 
+## [1.6.1] — 2026-04-30
+
+### Changed
+- SKILL.md compressed ~9%: achievement tables converted to compact dot-separated lists, depth calibration prose replaced with bullet list, Mode step skip note moved inline for clarity. No behavior or experience changes.
+
+---
+
 ## [1.6.0] — 2026-04-29
 
 ### Added
