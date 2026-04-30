@@ -1,0 +1,19 @@
+# Snyk policy file — accepted risks for GapHunter Deep Mode
+version: v1.25.0
+
+ignore:
+  WO11:
+    - '*':
+        reason: >
+          Deep Mode reads third-party repo content by explicit user consent only.
+          All file content is treated as data, never as instructions.
+          Files containing instruction-like text are skipped.
+          Users configure which repos to scan — no auto-discovery.
+        expires: 2099-01-01T00:00:00.000Z
+  WO12:
+    - '*':
+        reason: >
+          GitHub API endpoints are called at runtime to scan user-configured repos.
+          Repo paths are user-supplied and explicit — not auto-discovered.
+          The gh CLI handles authentication; no credentials are stored in the skill.
+        expires: 2099-01-01T00:00:00.000Z
