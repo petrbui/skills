@@ -180,6 +180,18 @@ See the [`examples/`](examples/) folder for real session transcripts:
 - GitHub repos scanned via `gh` API only — no cloning, no local file access outside configured repos
 - Delete the progress file anytime to fully reset — no data elsewhere
 
+### About the Snyk "Medium Risk" warning
+
+When you install GapHunter you'll see a Snyk audit warning. Here's what it means and why it's expected:
+
+**W011 — Third-party content exposure (indirect prompt injection risk)**
+Deep Mode reads source files from repos you explicitly add. Snyk flags this because file contents could theoretically contain malicious instructions. GapHunter defends against this: all file content is treated as data only, never as instructions, and files containing instruction-like text (`SYSTEM:`, `Ignore previous`, etc.) are skipped automatically.
+
+**W012 — Unverifiable external dependency (runtime URL)**
+Deep Mode calls the GitHub API (`gh api /repos/...`) at runtime to fetch repo file trees. Snyk flags any skill that makes external API calls. These calls are scoped to repos you explicitly configured — GapHunter never auto-discovers or accesses repos you haven't added.
+
+Both flags are intentional architectural features of Deep Mode, not bugs. Gen Agent Trust Hub and Socket both pass with no alerts. Light Mode has zero file access and is unaffected.
+
 ---
 
 ## License
