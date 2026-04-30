@@ -120,13 +120,15 @@ See the Install section below for your platform.
 Use the gaphunter skill
 ```
 
-**Step 3 — Answer 5 setup questions**
+**Step 3 — Answer 7 setup questions**
 GapHunter will ask one at a time:
 - What's your role?
 - What's your current stack or tools?
 - What do you want to learn? (your stack, a new language, a specific topic, or let GapHunter suggest)
 - How long have you been in your field?
 - Any learning preferences? (ADHD/dyslexia or standard)
+- Teaching style? (ADHD/Dyslexia, Standard, Dense, Socratic, Visual)
+- Light or Deep mode? (developers only)
 
 Honest answers = better lessons.
 
@@ -194,6 +196,10 @@ Copy `SKILL.md` to your agent's skills directory, then invoke with:
 | `export session` | Generate NotebookLM digest |
 | `switch to visual mode` | Change teaching style |
 | `change focus to [topic]` | Switch what you're learning without losing progress |
+| `add repo [path or github:owner/repo]` | Add a repo to Deep Mode scanning |
+| `show repos` | List configured repos |
+| `remove repo [N]` | Remove a repo by number |
+| `scan now` | Scan all repos immediately |
 | `continue` | Override a pause |
 | `reset profile` | Start fresh |
 
@@ -229,6 +235,7 @@ Switch anytime: `"switch to visual mode"`
 - No code, no secrets, no personal data ever stored
 - Light Mode: zero file access
 - Deep Mode: never reads `.env`, credentials, keys, or secret files
+- GitHub repos scanned via `gh` API only — no cloning, no local file access outside configured repos
 - Delete the progress file anytime to fully reset — no data elsewhere
 
 ---
