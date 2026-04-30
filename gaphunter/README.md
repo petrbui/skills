@@ -1,7 +1,7 @@
 # GapHunter
 
 <p align="center">
-  <img src="../../hero.png" alt="GapHunter — Locating Knowledge Gaps" width="100%" />
+  <img src="../hero.png" alt="GapHunter — Locating Knowledge Gaps" width="100%" />
 </p>
 
 <p align="center">
@@ -35,14 +35,14 @@ Use the gaphunter skill
 ```bash
 mkdir -p ~/.claude/skills/gaphunter
 curl -o ~/.claude/skills/gaphunter/SKILL.md \
-  https://raw.githubusercontent.com/petrbui/skills/main/skills/gaphunter/SKILL.md
+  https://raw.githubusercontent.com/petrbui/skills/main/gaphunter/SKILL.md
 ```
 
 **Gemini CLI**
 ```bash
 mkdir -p ~/.gemini/skills/gaphunter
 curl -o ~/.gemini/skills/gaphunter/SKILL.md \
-  https://raw.githubusercontent.com/petrbui/skills/main/skills/gaphunter/SKILL.md
+  https://raw.githubusercontent.com/petrbui/skills/main/gaphunter/SKILL.md
 ```
 
 **Cursor / GitHub Copilot / JetBrains AI / Other**
@@ -165,9 +165,9 @@ Type `export session` at the end of any session to get a clean markdown digest. 
 
 ## Examples
 
-See the [`examples/`](../../examples/) folder for real session transcripts:
-- [`session.md`](../../examples/session.md) — PM learning APIs from scratch
-- [`session-dev.md`](../../examples/session-dev.md) — Senior dev with Deep Mode, vocab lookup, and The Ambush
+See the [`examples/`](../examples/) folder for real session transcripts:
+- [`session.md`](../examples/session.md) — PM learning APIs from scratch
+- [`session-dev.md`](../examples/session-dev.md) — Senior dev with Deep Mode, vocab lookup, and The Ambush
 
 ---
 
