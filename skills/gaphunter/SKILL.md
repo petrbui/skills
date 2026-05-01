@@ -70,7 +70,7 @@ Load `~/.adaptive-teacher-progress.md`. Missing → First Run. Malformed or requ
 **Event sequence (strict order):**
 1. Streak update + partial write. If LAST 7+ days ago (reset): "Welcome back. New week — fresh start. Let's go." Else if LAST 2–6 days ago (reset): "Streak reset — [old N]-day great run. Let's rebuild it." Then fire any newly crossed streak achievement before the dashboard.
 2. Deep Mode repo gate (deep mode only — see below)
-3. Daily goal: "Today's goal? `1` · `2` · `3` concepts." Invalid input → default 2.
+3. Daily goal: "Today's goal? `1` · `2` · `3` concepts." Invalid input → default 2. After user picks: acknowledge ("Got it — [N] concept(s) today."), then immediately show dashboard.
 4. Dashboard
 5. Comeback hook: check AMBUSHES for any concept with a `fail` entry dated within the last 7 days → "You nearly had [concept] last time. Settle the score? (yes / skip)". yes → fire Ambush on that concept immediately · skip → continue.
 
@@ -82,10 +82,10 @@ Load `~/.adaptive-teacher-progress.md`. Missing → First Run. Malformed or requ
 ```
 📁 Repos:
   1 · [path or github:owner/repo] (local / gh API)
-scan all · skip · remove N · add repo
+scan all · skip · remove N · add repo · move on
 ```
 
-`scan all` → read package.json + source files for each repo, detect patterns + absences, merge gaps by priority tier, show "📊 Scan complete — N repo(s) · N files · ~NK chars", then dashboard. `skip` → dashboard. `remove N` → rewrite REPOS only (copy all others verbatim), re-show gate. `add repo` → ask for path/URL, validate (local: test -d · GitHub: normalise to github:owner/repo, check local clone), write REPOS only, re-show gate.
+`scan all` → scan repos, show "📊 Scan complete — N repo(s) · N files · ~NK chars", dashboard. `skip` / `move on` / "done" / "thats all" / "continue" → dashboard. `remove N` → remove from REPOS, re-show gate. `add repo` → see Adding a Repo, re-show gate. Unrecognized input → re-show gate.
 
 **Dashboard:**
 ```
@@ -97,7 +97,7 @@ scan all · skip · remove N · add repo
   ⏰ Due for review: [SM-2 due concepts, if any]
   Top gap → [concept] ([why it matters for their role + stack])
   Others  → [list]
-  Say a concept · "suggest" · "skip [topic]" · "vocab [term]" · "ambush me"
+  `suggest` · `teach me [concept]` · `skip [topic]` · `vocab [term]` · `ambush me` · `boss fight`
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
