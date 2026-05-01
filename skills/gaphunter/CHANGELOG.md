@@ -6,6 +6,54 @@ Format: [Keep a Changelog](https://keepachangelog.com) · Versioning: [Semantic 
 
 ---
 
+## [2.0.0] — 2026-05-01
+
+### Added
+- **SM-2 spaced repetition**: Every mastered concept tracks `n` (pass count), `EF` (easiness 1.3–2.5), `I` (interval days). Due concepts surface on dashboard above new gaps. Initial values: ★→EF=1.5,I=1 · ★★→EF=2.0,I=6 · ★★★→EF=2.5,I=14. n=0 on first write always.
+- **Placement test**: 3 cold challenges at First Run (item 1 / middle / last of starter pack). No stars — sets gap priority only (wrong=top · partial=mid · correct=bottom). Skippable.
+- **Boss Fight**: Triggers when GAPS empty or on `boss fight` command. Ambushes every ★★★ back-to-back. Threshold varies by level (60–90%). Pass → level up + new gap pack. Fail → failed concepts drop to ★★ with SM-2 penalty.
+- **Level system**: `LEVEL:` field tracks current role. Boss Fight pass updates PROFILE + LEVEL.
+- **Track Expansion**: Dev (Beginner→Junior→Mid→Senior→Team Lead) · AI (AI Eng→Mid AI→Senior AI, unlocks at Senior Dev) · Security (Security Eng→Mid Security→Senior Security, unlocks at Senior Dev) · PM/QA/Designer (always available, own ladders) · Founder (all tracks converge, unlocks at Team Lead or Principal+).
+- **New roles**: AI Engineer and Security Engineer — LLM-first and attack-first depth calibration, dedicated starter packs (10–11 gaps), sub-level additions, Boss Fight thresholds.
+- **Absence detection (Deep Mode)**: Signals gaps from missing patterns — `async/await` without `try/catch` → error handling gap; `fetch`/`axios` without error handling → API resilience gap. Absence signals weighted higher than presence.
+- **Self-referential teaching**: Deep Mode binds examples to user's actual code; Light Mode binds to declared stack.
+- **Cold challenge variation**: Opener adapts to context (SM-2 due, Senior+, Beginner, default).
+- **Stats block personalization**: Personal line varies (first concept, after retry, SM-2 revisit, ★★★+stack).
+- **Session close specificity**: Names the next specific gap, not generic encouragement.
+- **v1 migration**: Missing LEVEL: auto-added from PROFILE. Missing BOSS-FIGHT: auto-added after AMBUSHES. No halt required.
+- **STREAK=0d formatting**: Shows "🔥 Day 1 — streak starts now" instead of raw "0d".
+- **Welcome-back message**: 7+ day absence → "Welcome back. New week — fresh start. Let's go."
+- **Boss Fight at session close**: Announced when GAPS empty after final lesson.
+- **Streak achievements fire at session start**: Checked after streak update, not only post-lesson.
+
+### Changed
+- **Section ordering**: Critical sections reordered to fit Claude Code's 5,000-token post-compaction re-attachment window. All key sections confirmed under 20,000-char boundary (Gamification ends at ~19,977 chars).
+- **Dashboard**: SM-2 "⏰ Due for review:" row added above new gaps.
+- **Comprehension check**: Wrapped in visual separator box for clarity.
+- **Boss Fight pre-check message**: Tells user exactly how to re-earn ★★★ when none exist.
+- **Stats block next-achievement**: Re-evaluates AFTER firing just-earned achievement — always shows true next target.
+- **Skip Flow SM-2**: Writes EF=2.5,I=30 to signal strong prior knowledge.
+- **`change focus` track gating**: AI/Security require Senior Dev+. Soft gate — override allowed if user insists.
+- **Boss Fight fail wording**: "Not quite. [N] concepts need work." Specific, not vague.
+- **Streak reset feedback**: "Streak reset — [N]-day run broken. Let's rebuild it."
+- **Non-dev Deep Mode**: Clear rejection message, auto-sets Light Mode.
+
+### Fixed
+- n=0 on first MASTERED write (was erroneously implied as n=1)
+- SM-2 EF formula caps/floors explicit in all event table rows
+- Boss Fight fail SM-2 penalty now defined (was missing)
+- Type 2 Ambush now has fallback when no ★★★ concepts exist
+- Stats block "next achievement" re-evaluates post-unlock (no stale display)
+- Surprise Drop Ambush writes to MASTERED + AMBUSHES same as regular Ambush
+- ACHIEVEMENTS separator standardised to ` · ` (space-dot-space)
+- Dashboard "SO CLOSE" row omitted entirely when all achievements earned
+- `show repos` and `remove repo [N]` mid-session behaviors defined
+- Pause timer: counted from SESSION-START, not from last lesson
+- LAST field: explicitly today's date on first write
+- SESSION-START HH:MM defaults to 00:00 when time unavailable
+
+---
+
 ## [1.8.0] — 2026-04-30
 
 ### Changed
