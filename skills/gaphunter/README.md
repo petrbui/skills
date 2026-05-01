@@ -55,10 +55,13 @@ Copy `SKILL.md` to your agent's skills directory.
 ## What It Does
 
 - **Finds your gaps** — scans your git history (Light Mode) or codebase (Deep Mode) to detect what you actually use but don't fully understand
+- **Placement test** — 3 cold challenges on first run to calibrate gap priority. Honest difficulty from day one.
 - **Teaches it** — one concept at a time, calibrated to your role and teaching style
 - **Verifies retention** — comprehension check after every lesson: explain it back in your own words
-- **Tracks mastery** — ★ / ★★ / ★★★ stars, saved to `~/.adaptive-teacher-progress.md`
+- **Tracks mastery** — ★ / ★★ / ★★★ stars with SM-2 spaced repetition. Due concepts resurface automatically so you don't forget what you learned.
 - **Hunts weak spots** — The Ambush: surprise retests on concepts you thought you mastered
+- **Boss Fight** — when your gap list empties, GapHunter ambushes every ★★★ back-to-back. Pass the threshold → level up and unlock a new gap pack. Fail → SM-2 penalty, back to work.
+- **Level system** — progress through Dev / AI / Security / PM / QA / Designer tracks, all converging on Founder
 - **Keeps you coming back** — streaks, 30+ achievements, session close hook with your next goal
 - **Exports to NotebookLM** — clean markdown digest after every session for review, flashcards, or the auto-podcast
 
@@ -72,6 +75,8 @@ Copy `SKILL.md` to your agent's skills directory.
 | Mid-level Dev | Balanced depth, real-world examples |
 | Senior Dev | Dense mode, edge cases, no hand-holding |
 | Team Lead | Architecture and team implications |
+| AI Engineer | LLM-first depth — embeddings, context windows, evals, prompt engineering |
+| Security Engineer | Attack-first — OWASP, threat modelling, exploit patterns, hardening |
 | Product Manager | Business analogies, understand WHY devs say what they say |
 | QA Engineer | Connect concepts to quality, testing, and deploy pipelines |
 | Designer | Visual analogies, understand components and constraints |
@@ -102,6 +107,7 @@ Copy `SKILL.md` to your agent's skills directory.
 | `skip [concept]` | Quick verify → mark as known |
 | `vocab [term]` | Plain-English definition, no full lesson |
 | `ambush me` | Fire The Ambush now |
+| `boss fight` | Trigger Boss Fight — ambushes every ★★★ back-to-back |
 | `my progress` | Show dashboard |
 | `export session` | Generate NotebookLM digest |
 | `switch to [format] mode` | Change teaching style |
@@ -126,6 +132,24 @@ Copy `SKILL.md` to your agent's skills directory.
 | 🎨 Visual | ASCII diagrams, tables, flow charts |
 
 Switch anytime: `"switch to visual mode"`
+
+---
+
+## Level Up
+
+GapHunter tracks your role and advances it as you master more.
+
+```
+Beginner → Junior Dev → Mid Dev → Senior Dev → Team Lead
+                                              ↘ AI Engineer → Mid AI → Senior AI
+                                              ↘ Security Engineer → Mid Security → Senior Security
+PM / QA / Designer → Senior → Principal
+All tracks → Founder
+```
+
+When your gap list empties, the **Boss Fight** triggers automatically — GapHunter ambushes every ★★★ you've earned, back-to-back. Hit the threshold for your level and you advance. Your new role unlocks a fresh gap pack calibrated to the next level.
+
+The **Founder** track is the final convergence — available once you reach Team Lead or Principal level. No Boss Fight at the top: mastering all Founder gaps is the completion signal.
 
 ---
 
