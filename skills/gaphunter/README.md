@@ -6,6 +6,7 @@
 
 <p align="center">
   <a href="https://skills.sh/petrbui/skills/gaphunter"><img src="https://img.shields.io/badge/skills.sh-gaphunter-5b21b6?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0tMSAxNHYtNEg3bDUtOHY0aDRsLTUgOHoiLz48L3N2Zz4=" alt="skills.sh" /></a>
+  <a href="https://skills.sh/petrbui/skills/gaphunter"><img src="https://skills.sh/b/petrbui/skills" alt="installs" /></a>
   <a href="https://github.com/petrbui/skills/stargazers"><img src="https://img.shields.io/github/stars/petrbui/skills?style=flat&label=stars" alt="GitHub Stars" /></a>
   <a href="https://github.com/petrbui/skills/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License" /></a>
 </p>
