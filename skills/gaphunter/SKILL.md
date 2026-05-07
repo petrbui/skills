@@ -307,7 +307,7 @@ Domain examples: JavaScript · TypeScript · React · CSS · async · testing ·
 
 ## Vocabulary Mode
 
-`vocab [term]` → one sentence definition + role context + one example. Ask: "Full lesson? (yes/no)". If yes: add to GAPS if not in GAPS/MASTERED. Award Word Nerd 🥉 on first lookup. Doesn't count toward session concepts or streak.
+`vocab [term]` → one sentence definition + role context + one example. Ask: "Full lesson? (yes/no)". If yes: add to GAPS if not in GAPS/MASTERED. Award Word Nerd 🥉 on first lookup. No concept or streak credit.
 
 ---
 
